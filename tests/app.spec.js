@@ -21,6 +21,7 @@ describe("#2. Test [GET] users", () => {
     await request(app)
       .get("/users")
       .then((response) => {
+        console.log('------>AAAAAAAAAAAAAAAAAAAAAA',response.body.data.users);
         expect(response.statusCode).toBe(200);
 
         expect(response.body).toBeDefined();

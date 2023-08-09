@@ -44,6 +44,8 @@ module.exports.getUsersWithPostCount = async (req, res) => {
       prevPage: page > 1 ? page - 1 : null,
       nextPage: totalDocs - skip - limit > 0 ? page + 1 : null
     }
+    console.log("Users count from database:", usersWithPostCount.length);
+
 
     res.status(200).json({ data: { users: usersWithPostCount, pagination: pagination } });
 
